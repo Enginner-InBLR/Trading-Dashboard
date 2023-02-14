@@ -27,7 +27,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*.stories.tsx"],
+        "devDependencies": ["**/*.stories.tsx", "**/mocks/**/*"],
         "peerDependencies": false
       }
     ]
