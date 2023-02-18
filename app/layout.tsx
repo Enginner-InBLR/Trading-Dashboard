@@ -20,9 +20,14 @@ export default function RootLayout({
           <aside className="col-span-3">
             <SideBar />
           </aside>
-          <section className="col-span-9">{children}</section>
+          <main className="col-span-9 grid grid-cols-1 gap-4">{children}</main>
         </div>
       </body>
     </html>
   );
+}
+
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line global-require
+  require('./mocks');
 }
