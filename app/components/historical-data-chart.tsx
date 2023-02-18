@@ -18,6 +18,17 @@ export default function HistoricalDataChart({
       options={{
         chart: {
           id: 'candlestick',
+          animations: {
+            enabled: false,
+          },
+        },
+        xaxis: {
+          type: 'numeric',
+        },
+        yaxis: {
+          labels: {
+            formatter: (value) => value.toFixed(0),
+          },
         },
       }}
       series={[
