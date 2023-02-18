@@ -1,11 +1,14 @@
-import { Quote } from '@/app/modules/yahoo-finance/type';
+import { QuoteResponse } from '@/app/modules/yahoo-finance/type';
 
 interface Props {
   timestamps: string[];
-  quotes: Quote[];
+  quotesResponse: QuoteResponse;
 }
 
-export default function HistoricalDataTable({ timestamps, quotes }: Props) {
+export default function HistoricalDataTable({
+  timestamps,
+  quotesResponse,
+}: Props) {
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full divide-y-2 divide-gray-200 text-sm relative">
@@ -42,19 +45,19 @@ export default function HistoricalDataTable({ timestamps, quotes }: Props) {
                 {timestamp}
               </td>
               <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-700">
-                {quotes[index].low}
+                {quotesResponse.low[index].toFixed(2)}
               </td>
               <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                {quotes[index].high}
+                {quotesResponse.high[index].toFixed(2)}
               </td>
               <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                {quotes[index].open}
+                {quotesResponse.open[index].toFixed(2)}
               </td>
               <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                {quotes[index].close}
+                {quotesResponse.close[index].toFixed(2)}
               </td>
               <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                {quotes[index].volume}
+                {quotesResponse.volume[index]}
               </td>
             </tr>
           ))}

@@ -1,12 +1,13 @@
-import HistoricalDataTable from '@/app/components/historical-data-table';
-import { getDateStringFromTimestamp } from '@/app/modules/date';
-import { HistoricalData } from '@/app/modules/yahoo-finance/domain';
-import { fetchHistoricalData } from '@/app/modules/yahoo-finance/repository';
-import { Quote } from '@/app/modules/yahoo-finance/type';
 import {
   ArrowTrendingDownIcon,
   ArrowTrendingUpIcon,
 } from '@heroicons/react/24/outline';
+
+import HistoricalDataTable from '@/app/components/historical-data-table';
+import { getDateStringFromTimestamp } from '@/app/modules/date';
+import { HistoricalData } from '@/app/modules/yahoo-finance/domain';
+import { fetchHistoricalData } from '@/app/modules/yahoo-finance/repository';
+import HistoricalDataChart from '@/app/components/historical-data-chart';
 
 interface Props {
   symbol: string;
@@ -17,15 +18,6 @@ export default async function StockBoard({ symbol }: Props) {
   const historicalData = new HistoricalData(historicalDataResponse);
 
   const timestamps = historicalData.timestamps.map(getDateStringFromTimestamp);
-  const quotes = historicalData.quotes.volume.map(
-    (_, index): Quote => ({
-      low: historicalData.quotes.low[index].toFixed(2),
-      high: historicalData.quotes.high[index].toFixed(2),
-      open: historicalData.quotes.open[index].toFixed(2),
-      close: historicalData.quotes.close[index].toFixed(2),
-      volume: String(historicalData.quotes.volume[index]),
-    })
-  );
   const regularMarketChange = historicalData
     .getRegularMarketChange()
     .toFixed(2);
@@ -34,7 +26,7 @@ export default async function StockBoard({ symbol }: Props) {
     .toFixed(2);
 
   return (
-    <article className="rounded-lg border border-gray-100 bg-white p-6">
+    <article className="rounded-lg border border-gray-100 bg-white p-6 space-y-4">
       <div className="flex items-end justify-between">
         <div>
           <p className="text-sm text-gray-500">{symbol}</p>
@@ -59,7 +51,14 @@ export default async function StockBoard({ symbol }: Props) {
           </div>
         )}
       </div>
-      <HistoricalDataTable timestamps={timestamps} quotes={quotes} />
+      <HistoricalDataTable
+        timestamps={timestamps}
+        quotesResponse={historicalData.quotes}
+      />
+      <HistoricalDataChart
+        timestamps={timestamps}
+        quotesResponse={historicalData.quotes}
+      />
     </article>
   );
 }
