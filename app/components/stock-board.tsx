@@ -22,7 +22,9 @@ export default async function StockBoard({ symbol }: Props) {
   const historicalDataResponse = await fetchHistoricalData(symbol);
   const historicalData = new HistoricalData(historicalDataResponse);
 
-  const timestamps = historicalData.timestamps.map(getDateStringFromTimestamp);
+  const timestamps = historicalData.timestamps.map((timestamp) =>
+    getDateStringFromTimestamp(timestamp)
+  );
   const regularMarketChange = historicalData
     .getRegularMarketChange()
     .toFixed(2);
