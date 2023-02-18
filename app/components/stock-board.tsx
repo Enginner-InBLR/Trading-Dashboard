@@ -7,7 +7,12 @@ import HistoricalDataTable from '@/app/components/historical-data-table';
 import { getDateStringFromTimestamp } from '@/app/modules/date';
 import { HistoricalData } from '@/app/modules/yahoo-finance/domain';
 import { fetchHistoricalData } from '@/app/modules/yahoo-finance/repository';
-import HistoricalDataChart from '@/app/components/historical-data-chart';
+
+import dynamic from 'next/dynamic';
+
+const HistoricalDataChart = dynamic(() => import('./historical-data-chart'), {
+  ssr: false,
+});
 
 interface Props {
   symbol: string;
