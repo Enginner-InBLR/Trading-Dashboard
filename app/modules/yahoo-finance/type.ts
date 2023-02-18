@@ -17,7 +17,7 @@ interface TradingPeriodResponse {
   gmtoffset: number;
 }
 
-interface MetaResponse {
+export interface MetaResponse {
   currency: string;
   symbol: string;
   exchangeName: string;
@@ -68,4 +68,12 @@ interface ChartResponse {
 
 export interface HistoricalDataResponse {
   chart: ChartResponse;
+}
+
+export interface Quote {
+  low: string;
+  high: string;
+  open: string;
+  close: string;
+  volume: string;
 }
