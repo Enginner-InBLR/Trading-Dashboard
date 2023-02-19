@@ -1,0 +1,27 @@
+name: Trading Dashboard CI
+
+on: push
+
+jobs:
+  unit_test-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: prepare environment valuables
+        run: echo YAHOO_FINANCE_BASE_URI=${{ vars.YAHOO_FINANCE_BASE_URI }} >> .env.test
+
+      - name: yarn install
+        run: yarn install --frozen-lockfile
+
+      - name: lint by eslint
+        run: yarn lint
+
+      - name: unit test by jest
+        run: yarn test
