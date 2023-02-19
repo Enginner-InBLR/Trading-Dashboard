@@ -20,7 +20,7 @@ export default function RootLayout({
           <aside className="col-span-3">
             <SideBar />
           </aside>
-          <main className="col-span-9 grid grid-cols-1 gap-4">{children}</main>
+          <main className="col-span-9 space-y-4">{children}</main>
         </div>
       </body>
     </html>
