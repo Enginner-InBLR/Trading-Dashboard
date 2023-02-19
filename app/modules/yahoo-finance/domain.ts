@@ -18,7 +18,7 @@ export class HistoricalData {
   }
 
   public getRegularMarketChange(): number {
-    return this.meta.regularMarketPrice - this.meta.previousClose;
+    return this.meta.regularMarketPrice - this.meta.chartPreviousClose;
   }
 
   public getRegularMarketChangePercentage(): number {

@@ -88,6 +88,14 @@ export const historicalDataMock: HistoricalDataResponse = {
               ],
             },
           ],
+          adjclose: [
+            {
+              adjclose: [
+                4068.35009765625, 4066.2900390625, 4066.919921875,
+                4068.639892578125, 4072.6298828125,
+              ],
+            },
+          ],
         },
       },
     ],

@@ -1,6 +1,7 @@
 'use client';
 
 import Chart from 'react-apexcharts';
+import { format } from 'date-fns';
 
 import { QuoteResponse } from '@/app/modules/yahoo-finance/type';
 
@@ -24,6 +25,9 @@ export default function HistoricalDataChart({
         },
         xaxis: {
           type: 'numeric',
+          labels: {
+            formatter: (value) => format(new Date(value), 'yyyy-MM-dd'),
+          },
         },
         yaxis: {
           labels: {
