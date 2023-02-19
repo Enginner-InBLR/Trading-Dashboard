@@ -52,7 +52,7 @@ export default function SideBar() {
           </li>
         </ul>
       </div>
-      {/* <div>
+      <div>
         <strong className="block text-xs font-medium uppercase text-gray-400">
           Other
         </strong>
@@ -67,16 +67,16 @@ export default function SideBar() {
             </Link>
           </li>
 
-          <li>
+          {/* <li>
             <Link
               href="/contact"
               className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
             >
               Contact
             </Link>
-          </li>
+          </li> */}
         </ul>
-      </div> */}
+      </div>
     </nav>
   );
 }
