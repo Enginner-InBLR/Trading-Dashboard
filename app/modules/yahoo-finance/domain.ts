@@ -21,7 +21,7 @@ export class HistoricalData {
     return this.meta.regularMarketPrice - this.meta.previousClose;
   }
 
-  public getRegularMarketChangePercentage() {
+  public getRegularMarketChangePercentage(): number {
     return (this.getRegularMarketChange() / this.meta.regularMarketPrice) * 100;
   }
 

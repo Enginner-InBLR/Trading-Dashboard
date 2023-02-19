@@ -1,4 +1,6 @@
-export const historicalData = {
+import { HistoricalDataResponse } from '@/app/modules/yahoo-finance/type';
+
+export const historicalDataMock: HistoricalDataResponse = {
   chart: {
     result: [
       {

@@ -32,11 +32,10 @@ export interface MetaResponse {
   previousClose: number;
   scale: number;
   priceHint: number;
-  currentTradingPeriod: {
-    pre: TradingPeriodResponse;
-    regular: TradingPeriodResponse;
-    post: TradingPeriodResponse;
-  };
+  currentTradingPeriod: Record<
+    'pre' | 'regular' | 'post',
+    TradingPeriodResponse
+  >;
   tradingPeriods: TradingPeriodResponse[][];
   dataGranularity: string;
   range: string;
