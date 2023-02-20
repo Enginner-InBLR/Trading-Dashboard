@@ -13,8 +13,8 @@ export default function Home() {
       <MenuCard
         title="Portfolio"
         description="you can manage your portfolio here, and see the performance of your portfolio"
-        supplement="currently under development and not available"
-        disabled
+        supplement="currently only part of features are available, will be improved in the future"
+        url="/portfolio"
       />
       <MenuCard
         title="Prediction"

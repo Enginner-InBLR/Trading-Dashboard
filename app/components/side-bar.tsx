@@ -28,14 +28,14 @@ export default function SideBar() {
             </Link>
           </li>
 
-          {/* <li>
+          <li>
             <Link
               href="/portfolio"
               className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
             >
               Portfolio
             </Link>
-          </li> */}
+          </li>
 
           <li>
             <p className="flex items-center block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">
