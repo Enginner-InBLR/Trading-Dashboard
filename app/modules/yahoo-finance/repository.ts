@@ -4,13 +4,13 @@ import {
   validRanges,
 } from '@/app/modules/yahoo-finance/type';
 
-export async function fetchHistoricalData(
+export const fetchHistoricalData = async (
   symbol: string,
   queryParams: { interval: validIntervals; range: validRanges } = {
     interval: '1d',
     range: '3mo',
   }
-): Promise<HistoricalDataResponse> {
+): Promise<HistoricalDataResponse> => {
   const searchParams = new URLSearchParams(queryParams);
   const response = await fetch(
     `${
@@ -21,4 +21,4 @@ export async function fetchHistoricalData(
     throw new Error('Failed to fetch data in server');
   }
   return response.json();
-}
+};
