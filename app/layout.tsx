@@ -1,6 +1,8 @@
+import './globals.css';
+
+import { Alert } from '@/app/components/alert';
 import Header from '@/app/components/header';
 import SideBar from '@/app/components/side-bar';
-import './globals.css';
 
 export default function RootLayout({
   children,
@@ -15,6 +17,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
+        <Alert />
         <Header />
         <div className="grid grid-cols-12 gap-4 max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
           <aside className="col-span-3">

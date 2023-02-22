@@ -8,6 +8,7 @@ import { PortfolioFieldValues } from '@/app/modules/portfolio/type';
 import { patchPortfolio } from '@/app/modules/portfolio/repository';
 import { useCallback } from 'react';
 import { VALID_TICKER_SYMBOLS } from '@/app/modules/portfolio/domain';
+import { useAlertStore } from '@/app/components/alert';
 
 interface Props {
   symbols: string[];
@@ -15,6 +16,7 @@ interface Props {
 
 export default function SettingForm({ symbols }: Props) {
   const router = useRouter();
+  const setAlert = useAlertStore((state) => state.setAlert);
 
   const { control, register, handleSubmit, formState } =
     useForm<PortfolioFieldValues>({
@@ -34,10 +36,9 @@ export default function SettingForm({ symbols }: Props) {
       const newSymbols = data.portfolio.map((item) => item.symbol);
       patchPortfolio(newSymbols);
       router.refresh();
-      // eslint-disable-next-line no-alert
-      alert('Portfolio updated');
+      setAlert('Portfolio updated');
     },
-    [router]
+    [router, setAlert]
   );
 
   return (
