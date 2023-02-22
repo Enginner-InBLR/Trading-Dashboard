@@ -59,17 +59,10 @@ export default function SettingForm({ symbols }: Props) {
                     })}
                     key={field.id}
                     className="w-full rounded-lg border border-gray-200 p-3 text-sm appearance-none"
-                    placeholder="Symbol"
                     defaultValue=""
                   >
-                    <option
-                      value=""
-                      selected
-                      disabled
-                      hidden
-                      className="text-gray-300"
-                    >
-                      {` `}
+                    <option value="" selected disabled hidden>
+                      -- should select an option --
                     </option>
                     {VALID_TICKER_SYMBOLS.map((symbol) => (
                       <option key={symbol} value={symbol}>
