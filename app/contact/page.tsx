@@ -1,4 +1,4 @@
-export default async function ContactPage() {
+export default function ContactPage() {
   return (
     <>
       <h2 className="text-lg font-bold text-gray-900 sm:text-2xl pb-3">

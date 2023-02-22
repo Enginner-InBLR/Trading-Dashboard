@@ -3,7 +3,7 @@ import SettingForm from '@/app/portfolio/setting-form';
 import { fetchPortfolio } from '@/app/modules/portfolio/repository';
 import InfoBanner from '@/app/components/info-banner';
 
-export default async function Portfolio() {
+export default function Portfolio() {
   const portfolio = fetchPortfolio();
   const symbols: string[] = portfolio ? JSON.parse(portfolio) : [];
 

@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
-export default async function FaqPage() {
+export default function FaqPage() {
   return (
     <>
       <h2 className="text-lg font-bold text-gray-900 sm:text-2xl pb-3">FAQ</h2>
