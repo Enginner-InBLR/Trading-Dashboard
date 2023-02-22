@@ -71,3 +71,7 @@ For shortening the time to develop, we use ChatGPT to generate some descriptions
 ### UI Library
 
 some components are from [HyperUI](https://www.hyperui.dev/) with tailwindcss.
+
+### Form
+
+use [formspree](https://formspree.io/) in contact page.
