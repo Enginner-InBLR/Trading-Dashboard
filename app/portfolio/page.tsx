@@ -18,6 +18,7 @@ export default function Portfolio() {
         description="you can manage your portfolio here, but please note that only the Nasdaq
           100 is supported at this time."
       />
+      <InfoBanner title="portfolio data is persisted in your browser's for 1 year from saved" />
       <SettingForm symbols={symbols} />
       {symbols.map((symbol) => (
         <>

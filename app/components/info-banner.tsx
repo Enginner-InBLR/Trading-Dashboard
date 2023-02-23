@@ -2,7 +2,7 @@ import { InformationCircleIcon } from '@heroicons/react/24/outline';
 
 interface Props {
   title: string;
-  description: string;
+  description?: string;
 }
 
 export default function InfoBanner({ title, description }: Props) {
@@ -15,7 +15,9 @@ export default function InfoBanner({ title, description }: Props) {
         <InformationCircleIcon className="h-5 w-5" />
         <strong className="block font-medium">{title}</strong>
       </div>
-      <p className="mt-2 text-sm text-cyan-700">{description}</p>
+      {description && (
+        <p className="mt-2 text-sm text-cyan-700">{description}</p>
+      )}
     </div>
   );
 }

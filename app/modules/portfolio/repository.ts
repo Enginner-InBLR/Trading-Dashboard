@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie';
+import { addYears } from 'date-fns';
 
 export const fetchPortfolio = (): string | undefined => {
   // eslint-disable-next-line global-require, @typescript-eslint/no-var-requires
@@ -8,5 +9,9 @@ export const fetchPortfolio = (): string | undefined => {
 };
 
 export const patchPortfolio = (symbols: string[]): void => {
-  Cookies.set('portfolio', JSON.stringify(symbols));
+  Cookies.set('portfolio', JSON.stringify(symbols), {
+    expires: addYears(new Date(), 1),
+    sameSite: 'lax',
+    secure: true,
+  });
 };
