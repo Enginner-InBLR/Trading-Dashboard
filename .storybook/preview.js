@@ -9,6 +9,13 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  nextjs: {
+    appDirectory: true,
+    navigation: {
+      pathname: '/',
+      query: {},
+    },
+  },
 };
 
 // Initialize MSW
