@@ -1,9 +1,9 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 
 import SideBar from './side-bar';
 
 export default {
   component: SideBar,
-} as ComponentMeta<typeof SideBar>;
+} as Meta<typeof SideBar>;
 
-export const Default: ComponentStoryObj<typeof SideBar> = {};
+export const Default: StoryObj<typeof SideBar> = {};

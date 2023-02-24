@@ -1,12 +1,12 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 
 import HistoricalDataChart from './historical-data-chart';
 
 export default {
   component: HistoricalDataChart,
-} as ComponentMeta<typeof HistoricalDataChart>;
+} as Meta<typeof HistoricalDataChart>;
 
-export const Default: ComponentStoryObj<typeof HistoricalDataChart> = {
+export const Default: StoryObj<typeof HistoricalDataChart> = {
   render: () => (
     <div className="w-[600px]">
       <HistoricalDataChart

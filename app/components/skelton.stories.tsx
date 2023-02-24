@@ -1,9 +1,9 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 
 import Skelton from './skelton';
 
 export default {
   component: Skelton,
-} as ComponentMeta<typeof Skelton>;
+} as Meta<typeof Skelton>;
 
-export const Default: ComponentStoryObj<typeof Skelton> = {};
+export const Default: StoryObj<typeof Skelton> = {};

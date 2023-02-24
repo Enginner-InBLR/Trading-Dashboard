@@ -1,12 +1,12 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 
 import HistoricalDataTable from './historical-data-table';
 
 export default {
   component: HistoricalDataTable,
-} as ComponentMeta<typeof HistoricalDataTable>;
+} as Meta<typeof HistoricalDataTable>;
 
-export const Default: ComponentStoryObj<typeof HistoricalDataTable> = {
+export const Default: StoryObj<typeof HistoricalDataTable> = {
   args: {
     timestamps: [
       '2023/02/17 23:30',
