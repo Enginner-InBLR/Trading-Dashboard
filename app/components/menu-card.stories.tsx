@@ -1,12 +1,12 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 
 import MenuCard from './menu-card';
 
 export default {
   component: MenuCard,
-} as ComponentMeta<typeof MenuCard>;
+} as Meta<typeof MenuCard>;
 
-export const Default: ComponentStoryObj<typeof MenuCard> = {
+export const Default: StoryObj<typeof MenuCard> = {
   args: {
     title: 'Card Title',
     description: 'Card Description',
@@ -15,7 +15,7 @@ export const Default: ComponentStoryObj<typeof MenuCard> = {
   },
 };
 
-export const Disabled: ComponentStoryObj<typeof MenuCard> = {
+export const Disabled: StoryObj<typeof MenuCard> = {
   args: {
     ...Default.args,
     disabled: true,

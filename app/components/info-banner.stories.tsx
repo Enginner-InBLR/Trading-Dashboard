@@ -1,12 +1,12 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import { StoryObj, Meta } from '@storybook/react';
 
 import InfoBanner from './info-banner';
 
 export default {
   component: InfoBanner,
-} as ComponentMeta<typeof InfoBanner>;
+} as Meta<typeof InfoBanner>;
 
-export const Default: ComponentStoryObj<typeof InfoBanner> = {
+export const Default: StoryObj<typeof InfoBanner> = {
   args: {
     title: 'Info Banner Title',
     description: 'Info Banner Description',
